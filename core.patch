@@ -1,0 +1,54 @@
+diff --git a/package.json b/package.json
+index 20d85bb9..8ad464e1 100644
+--- a/package.json
++++ b/package.json
+@@ -76,7 +76,7 @@
+   "devDependencies": {
+     "@types/cors": "2.8.6",
+     "@types/estree": "1.0.1",
+-    "@types/express": "4.17.3",
++    "@types/express": "4.17.21",
+     "@types/got": "9.6.9",
+     "@types/jest": "27.0.1",
+     "@types/node": "18.19.1",
+@@ -119,4 +119,4 @@
+     "tough-cookie": "4.1.3",
+     "postcss": "8.4.31"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/logger/index.ts b/src/logger/index.ts
+index c55cde90..b79082cf 100644
+--- a/src/logger/index.ts
++++ b/src/logger/index.ts
+@@ -505,23 +505,23 @@ class Logger {
+             logFlags.verbose = true;
+             logFlags.debug = true;
+             logFlags.info = true;
+-            logFlags.error = true;
+-            // @ts-ignore
++            logFlags.error = true;            
+         }
++        // @ts-ignore
+         else if (mainLogger && ['DEBUG', 'debug'].includes(mainLogger.level.levelStr)) {
+             logFlags.verbose = false;
+             logFlags.debug = true;
+             logFlags.info = true;
+-            logFlags.error = true;
+-            // @ts-ignore
++            logFlags.error = true;            
+         }
++        // @ts-ignore
+         else if (mainLogger && ['INFO', 'info'].includes(mainLogger.level.levelStr)) {
+             logFlags.verbose = false;
+             logFlags.debug = false;
+             logFlags.info = true;
+-            logFlags.error = true;
+-            // @ts-ignore
++            logFlags.error = true;            
+         }
++        // @ts-ignore
+         else if (mainLogger && ['ERROR', 'error', 'WARN', 'warn'].includes(mainLogger.level.levelStr)) {
+             logFlags.verbose = false;
+             logFlags.debug = false;

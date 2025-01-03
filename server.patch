@@ -1,0 +1,39 @@
+diff --git a/package.json b/package.json
+index 874090f8..ddc53fb3 100644
+--- a/package.json
++++ b/package.json
+@@ -69,7 +69,7 @@
+     "@shardus/archiver": "git+https://github.com/shardeum/archive-server#itn4",
+     "@shardus/monitor-server": "git+https://github.com/shardeum/x-monitor-server#itn4",
+     "@types/decimal.js": "7.4.0",
+-    "@types/express": "4.17.2",
++    "@types/express": "4.17.21",
+     "@types/heapdump": "0.3.1",
+     "@types/jest": "29.5.13",
+     "@types/lodash": "4.14.149",
+diff --git a/src/debug/evmSetup/index.ts b/src/debug/evmSetup/index.ts
+index d433ce79..5030974f 100644
+--- a/src/debug/evmSetup/index.ts
++++ b/src/debug/evmSetup/index.ts
+@@ -9,7 +9,7 @@ import { EVM as EthereumVirtualMachine } from '../../evm_v2';
+ let shardeumBlock: ShardeumBlock;
+ export let evmCommon: Common;
+ export let EVM: {
+-    -readonly [P in keyof VM]: ;
++    -readonly [P in keyof VM];
+ };
+ export let shardeumStateTXMap: Map<string, ShardeumState>;
+ export let shardusAddressToEVMAccountInfo: Map<string, EVMAccountInfo>;
+diff --git a/src/index.ts b/src/index.ts
+index ab328a0b..4e606ac8 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -343,7 +343,7 @@ interface RunStateWithLogs extends RunState {
+     ];
+ }
+ let EVM: {
+-    -readonly [P in keyof VM]: ;
++    -readonly [P in keyof VM];
+ };
+ let shardeumBlock: ShardeumBlock;
+ //let transactionStateMap:Map<string, TransactionState>
